@@ -2,16 +2,17 @@
 #!/bin/bash
 sudo apt update
 sudo apt upgrade -y
-sudo apt install postgresql postgresql-contrib -y
+sudo apt install postgresql postgresql-contrib jq -y
 sudo -u postgres psql -c "CREATE DATABASE mattermost;"
 sudo -u postgres psql -c "CREATE USER mmuser WITH PASSWORD 'mmuser-password';"
 sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE mattermost to mmuser;"
 sudo systemctl restart postgresql
 
 
-cd /tmp
+# cd /tmp
 echo "Downloading Mattermost..."
-wget --content-disposition "https://latest.mattermost.com/mattermost-enterprise-linux"
+## wget --content-disposition "https://latest.mattermost.com/mattermost-enterprise-linux"
+wget "https://releases.mattermost.com/$1/mattermost-$1-linux-amd64.tar.gz"
 tar -xvzf mattermost*.gz
 mv mattermost /opt
 mkdir /opt/mattermost/data
@@ -24,7 +25,7 @@ jq -s '.[0] * .[1]' config.orig.json config.json > /opt/mattermost/config/config
 
 
 echo "Setting up the Mattermost service file..."
-cp ~/postgres-mattermost.service /lib/systemd/system/mattermost.service
+cp postgres-mattermost.service /lib/systemd/system/mattermost.service
 systemctl daemon-reload
 systemctl start mattermost.service
 curl http://localhost:8065
