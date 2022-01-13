@@ -1,0 +1,6 @@
+{
+    "SqlSettings": {
+        "DriverName": "mysql",
+        "DataSource": "mmuser:mmuser-password@tcp(localhost:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s"
+    }
+}

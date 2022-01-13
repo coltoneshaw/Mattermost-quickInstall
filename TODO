@@ -1,0 +1,12 @@
+
+- Test / finish the upgrade command
+- Move and wire up the LDAP setup.
+- Add reading from teh config.json file. This would also be used for defaults.
+- Enable local mode via config.json
+- Add stand alone command for LDAP to be implemented
+- Add downgrade script from v6 to v5
+- Add downgrade command
+- Add data collection commands for prof, goRoutine
+- Add a check on the install script to see if `/opt/mattermost` is empty
+
+- DONE Structure the scripts folder

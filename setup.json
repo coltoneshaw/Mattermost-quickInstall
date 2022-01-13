@@ -1,0 +1,15 @@
+{
+    "version" : "latest", 
+    "saml": true,
+    "siteURL" : "http://127.0.0.1:8065",
+    "apiKey" : "mtn76nx5zbg77kjhw7dhdrtwgh",
+    "ldap": {
+        "enable" : true,
+        "numUsers" : 10000,
+        "numGroups" : 500
+    },
+    "nginx" : true,
+    "databaseDriver" : "postgres",
+    "metrics" : true,
+    "licenseFile" : "mattermost-license.license"
+}

@@ -1,3 +1,5 @@
-keystore.p12
-mattermost.crt
-mattermost.key
+node_modules
+setup/*
+.vagrant
+.cache
+.sudo_as_admin_successful
