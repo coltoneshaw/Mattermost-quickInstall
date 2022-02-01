@@ -55,3 +55,4 @@ Other servers:
 
 
 
+scp -i "~/aws-demo.pem" -r ./* ubuntu@ec2-44-199-200-125.compute-1.amazonaws.com:~
